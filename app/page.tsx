@@ -519,7 +519,7 @@ export default function Page() {
 
       {/* ── small edit dialog ── */}
       <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
-        <DialogContent className="sm:max-w-lg max-h-[90dvh] overflow-y-auto">
+        <DialogContent className="w-[560px] max-w-[calc(100vw-2rem)] max-h-[90dvh] overflow-y-auto overflow-x-hidden">
           <DialogHeader>
             <DialogTitle>{editingNote ? "Edit Note" : "New Note"}</DialogTitle>
           </DialogHeader>
@@ -535,7 +535,8 @@ export default function Page() {
               value={body}
               onChange={(e) => setBody(e.target.value)}
               rows={8}
-              className="resize-none"
+              className="resize-none font-mono"
+              style={LINED_PAPER_STYLE}
             />
           </div>
           <DialogFooter>
